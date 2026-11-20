@@ -2,3 +2,4 @@
 header.top nav a[href="/earn"],header.top nav a[href="/create"]{display:none}
 header.top nav a[href="/learn"]{display:none}
 footer nav{display:none}
+footer.foot nav{display:none!important}
