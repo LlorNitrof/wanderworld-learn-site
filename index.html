@@ -3,4 +3,17 @@ setInterval(function(){var h=document.querySelector('.hero h1');if(!h||document.
 if(!Object.keys(h).some(function(k){return k.indexOf('__react')==0}))return;
 var b=document.querySelector('.hero .btn.alt');if(!b)return;
 var d=document.createElement('div');d.id='vsl';d.className='vsl';d.textContent='VIDEO SALES LETTER · PASTE VIDEO HERE';b.parentNode.insertBefore(d,b)},300);</script>
+<script>/* Swaps the "five pillars" text for the five flagship courses after React hydrates (keeps the plane animation). */
+(function(){var C=[["Affiliate Business Academy","Learn how WanderEarn works, promote travel opportunities, connect with customers, and build your affiliate business skills.","Jade"],
+["Basic Salesmanship","Master prospecting, building rapport, understanding customer needs, handling objections, and closing sales.","Philip Caldito"],
+["AI Mastery & Agentic Systems","Discover artificial intelligence, master prompting, and build AI-powered tools and workflows.","Basil Reyno"],
+["AI-Powered Social Media Management","Learn content strategy, copywriting, video creation, community management, and AI-powered marketing.","To be announced"],
+["Tour Guiding & Group Tour Leading","Learn to plan itineraries, guide travelers, tell destination stories, and lead memorable group experiences.","Nica"]];
+var t=setInterval(function(){var h=[].slice.call(document.querySelectorAll('main h2')).filter(function(e){return /five pillars|Flagship Courses/.test(e.textContent)})[0];
+if(!h||!Object.keys(h).some(function(k){return k.indexOf('__react')==0}))return;clearInterval(t);
+var s=h.closest('section');if(s.dataset.courses)return;s.dataset.courses=1;
+h.textContent='The Five Flagship Courses of WanderLearn';
+s.querySelector('.lede').textContent='Discover practical skills in business, technology, digital marketing, and tourism. Choose your learning journey and explore new possibilities.';
+s.querySelectorAll('.card').forEach(function(c,i){c.querySelector('h3').textContent=C[i][0];c.querySelector('p').textContent=C[i][1];
+var p=document.createElement('p');p.className='instr';p.textContent='Instructor: '+C[i][2];c.appendChild(p)})},300)})();</script>
 </body></html>

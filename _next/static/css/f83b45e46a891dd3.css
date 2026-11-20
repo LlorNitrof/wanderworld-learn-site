@@ -10,3 +10,7 @@ main>section:nth-last-of-type(-n+2){display:none!important}
 .hero .vsl+.btn{display:inline-block}
 .faq details:nth-child(3){display:none!important}
 .faq details:last-child{display:none!important}
+.card .instr{margin:12px 0 0!important;font-size:.78rem;font-weight:600;letter-spacing:.04em;color:#D76304;text-align:left!important}
+.grid.five .card{--rows:4}
+.grid.five .card p{text-align:left!important;hyphens:none!important}
+.wrap.wide>.lede{max-width:none!important}
