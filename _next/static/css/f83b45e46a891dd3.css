@@ -17,3 +17,37 @@ main>section:nth-last-of-type(-n+2){display:none!important}
 .card .instr{display:flex!important;flex-direction:column;gap:2px;text-transform:none}
 .card .instr span{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7a5a3a}
 .card .instr strong{font-size:1.05rem;font-weight:700;white-space:nowrap;color:#D76304}
+.cpanel{margin:28px auto 0;max-width:1100px;background:#FFFBF4;border:1px dashed #b9c9bd;border-top:4px solid #D76304;border-radius:8px;padding:26px 30px;text-align:left;animation:cpin .35s ease}
+.cpanel[hidden]{display:none}
+@keyframes cpin{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.cpanel p,.cpanel h3,.cpanel h4{text-align:left!important;margin:0}
+.cp-k{font-size:.75rem;font-weight:700;letter-spacing:.14em;color:#D76304}
+.cp-t{font-size:1.6rem;margin:6px 0 4px!important;color:#0B3A2C}
+.cp-s{font-size:1.05rem;color:#2f4f43}
+.cp-i{margin:8px 0 18px!important;font-size:.95rem;color:#2f4f43}.cp-i strong{color:#D76304}
+.cp-w{display:flex;flex-direction:column;gap:2px;border-left:4px solid #D76304;background:#F2EAD9;padding:10px 14px;margin-bottom:20px;color:#0B3A2C}
+.cp-h{font-size:1.1rem;margin:18px 0 8px!important;color:#0B3A2C}
+.cpanel ol{margin:0;padding-left:0;list-style:none;counter-reset:n;display:grid;gap:6px;color:#0B3A2C}
+.cpanel li{counter-increment:n;padding-left:34px;position:relative;text-align:left}
+.cpanel li:before{content:counter(n);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:#D76304;color:#fff;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.cp-o{color:#2f4f43}
+@media (max-width:640px){.cpanel{padding:20px 16px}}
+.cpanel{animation:cpreveal .65s cubic-bezier(.2,.8,.2,1)}
+@keyframes cpreveal{from{clip-path:inset(0 0 100% 0);opacity:0}to{clip-path:inset(0 0 0 0);opacity:1}}
+.cpanel.out{animation:cpout .3s ease forwards}
+@keyframes cpout{to{clip-path:inset(0 0 100% 0);opacity:0}}
+.cpanel>*,.cpanel li{animation:cpitem .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--d,0)*70ms + 180ms)}
+@keyframes cpitem{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cpanel.out>*,.cpanel.out li{animation:none}
+.cpanel{animation:none;box-sizing:border-box;margin-top:60px}
+.cpanel>*,.cpanel li{animation-delay:calc(var(--d,0)*110ms + 400ms)}
+.grid.five .card{--rows:5}
+.grid.five .card.xopen{outline:2px solid #D76304;outline-offset:-2px}
+.xbtn{justify-self:center;align-self:end;display:block;width:64px;height:30px;margin:6px 0 0;padding:0;border:0;border-radius:6px;background:transparent;cursor:pointer;transition:background-color .25s}
+.xbtn:hover{background:#FFE9D0}
+.xbtn:focus-visible{outline:3px solid #0B3A2C;outline-offset:2px}
+.xbtn .xl{display:none}
+.xbtn .xc{display:block;width:100%;height:100%;font-size:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpolyline points='3,3 14,11 25,3' fill='none' stroke='%23D76304' stroke-width='4' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 50% 25%/34px 17px no-repeat;animation:xwob 1.6s ease-in-out infinite;transition:transform .45s cubic-bezier(.5,1.5,.4,1)}
+.xbtn:hover .xc{animation-duration:.9s}
+.xbtn.on .xc{transform:scaleY(-1)}
+@keyframes xwob{0%,100%{background-position:50% 25%}50%{background-position:50% 75%}}
