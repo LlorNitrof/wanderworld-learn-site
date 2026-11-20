@@ -14,3 +14,6 @@ main>section:nth-last-of-type(-n+2){display:none!important}
 .grid.five .card{--rows:4}
 .grid.five .card p{text-align:left!important;hyphens:none!important}
 .wrap.wide>.lede{max-width:none!important}
+.card .instr{display:flex!important;flex-direction:column;gap:2px;text-transform:none}
+.card .instr span{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7a5a3a}
+.card .instr strong{font-size:1.05rem;font-weight:700;white-space:nowrap;color:#D76304}
