@@ -51,4 +51,10 @@ function shrink(){var h=panel.offsetHeight;panel.style.cssText='overflow:hidden;
 cards.forEach(function(card,i){var b=el('button','xbtn');b.type='button';label(b);btns.push(b);card.appendChild(b);
 b.addEventListener('click',function(){if(mq.matches){flip(card,i,b);return}var open=cur!==i;btns.forEach(function(x,j){label(x,open&&j===i);cards[j].classList.toggle('xopen',open&&j===i)});
 if(open){var was=cur>=0;cur=i;show(i);if(!was)grow();setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'})},400)}else{cur=-1;shrink()}})})},300)})();</script>
-</body></html>
+<script>/* Hero copy: WanderEarn kicker, headline and lede (post-hydration so React doesn't revert it). */
+setInterval(function(){var h=document.querySelector('.hero h1');if(!h||h.dataset.we)return;h.dataset.we=1;
+var k=document.querySelector('.hero .kicker');if(k)k.textContent='WANDEREARN';
+var p=document.querySelector('.hero .lede');if(p)p.textContent='An affiliate ecosystem where travel lovers and creators learn to promote travel experiences and earn commissions from qualifying confirmed bookings.';
+var lines=[['Love','Travel.'],['Share','More.','Earn','More.']],i=0,o='';
+lines.forEach(function(ws,l){if(l)o+='<br>';ws.forEach(function(w,j){if(j)o+=' ';o+='<span class="ww">'+w.split('').map(function(c){return '<span class="wv" style="--i:'+(i++)+'">'+c+'</span>'}).join('')+'</span>'})});
+h.innerHTML='<span aria-label="Love Travel. Share More. Earn More."><span aria-hidden="true">'+o+'</span></span>'},300);</script></body></html>
