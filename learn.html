@@ -2,7 +2,7 @@
 setInterval(function(){var h=document.querySelector('.hero h1');if(!h||document.getElementById('vsl'))return;
 if(!Object.keys(h).some(function(k){return k.indexOf('__react')==0}))return;
 var b=document.querySelector('.hero .btn.alt');if(!b)return;
-var d=document.createElement('div');d.id='vsl';d.className='vsl';d.innerHTML='<iframe src="https://www.youtube.com/embed/bWaWst3Qjc0?rel=0" title="WanderLearn video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';b.parentNode.insertBefore(d,b)},300);</script>
+var d=document.createElement('div');d.id='vsl';d.className='vsl';d.innerHTML='<video src="/media/wanderlearn-intro.mp4" poster="/media/wanderlearn-intro.jpg" controls playsinline preload="metadata" controlslist="nodownload"></video>';b.parentNode.insertBefore(d,b)},300);</script>
 <script>/* Swaps the "five pillars" text for the five flagship courses after React hydrates (keeps the plane animation). */
 (function(){var C=[["Affiliate Business Academy","Learn how WanderEarn works, promote travel opportunities, connect with customers, and build your affiliate business skills.","Jade Nerosa"],
 ["Basic Salesmanship","Master prospecting, building rapport, understanding customer needs, handling objections, and closing sales.","Philip Caldito"],
