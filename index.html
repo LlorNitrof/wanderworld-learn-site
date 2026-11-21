@@ -8,7 +8,7 @@ var d=document.createElement('div');d.id='vsl';d.className='vsl';d.innerHTML='<v
 ["Basic Salesmanship","Master prospecting, building rapport, understanding customer needs, handling objections, and closing sales.","Philip Caldito"],
 ["AI Mastery & Agentic Systems","Discover artificial intelligence, master prompting, and build AI-powered tools and workflows.","Basil Reyno"],
 ["AI-Powered Social Media Management","Learn content strategy, copywriting, video creation, community management, and AI-powered marketing.","Alger Liong"],
-["Tour Guiding & Group Tour Leading","Learn to plan itineraries, guide travelers, tell destination stories, and lead memorable group experiences.","Nica Fabriga"]];
+["Creating Travel Itineraries 101","Learn to plan itineraries, guide travelers, tell destination stories, and lead memorable group experiences.","Nica Fabriga"]];
 var t=setInterval(function(){var h=[].slice.call(document.querySelectorAll('main h2')).filter(function(e){return /five pillars|Flagship Courses/.test(e.textContent)})[0];
 if(!h||!Object.keys(h).some(function(k){return k.indexOf('__react')==0}))return;clearInterval(t);
 var s=h.closest('section');if(s.dataset.courses)return;s.dataset.courses=1;
@@ -57,4 +57,25 @@ var k=document.querySelector('.hero .kicker');if(k)k.textContent='WANDEREARN';
 var p=document.querySelector('.hero .lede');if(p)p.textContent='An affiliate ecosystem where travel lovers and creators learn to promote travel experiences and earn commissions from qualifying confirmed bookings.';
 var lines=[['Love','Travel.'],['Share','More.','Earn','More.']],i=0,o='';
 lines.forEach(function(ws,l){if(l)o+='<br>';ws.forEach(function(w,j){if(j)o+=' ';o+='<span class="ww">'+w.split('').map(function(c){return '<span class="wv" style="--i:'+(i++)+'">'+c+'</span>'}).join('')+'</span>'})});
-h.innerHTML='<span aria-label="Love Travel. Share More. Earn More."><span aria-hidden="true">'+o+'</span></span>'},300);</script></body></html>
+h.innerHTML='<span aria-label="Love Travel. Share More. Earn More."><span aria-hidden="true">'+o+'</span></span>'},300);</script><script>/* WanderEarn revisions: value stack, sale banner, earning mechanics, stops, promise, FAQ (post-hydration). */
+setInterval(function(){var st=document.getElementById('stack');if(!st||st.dataset.we2)return;st.dataset.we2=1;
+var Q=function(s,r){return (r||document).querySelector(s)};
+Q('h2',st).textContent='One-time \u20b11,500 membership. A complete starting toolkit.';
+var k=Q('.tl-free .tl-k',st);if(k)k.textContent='START \u00b7 Included in the WanderLearn activation';
+var CERT='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="15" cy="15" r="3"></circle><path d="M13 17.5V22l2-1.5 2 1.5v-4.5"></path><path d="M10 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-1 1.73"></path><path d="M6 9h12M6 12h3M6 15h2"></path></svg>';
+var AI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2-2a2 2 0 0 1-2-2a2 2 0 0 1-2 2zm0-12a2 2 0 0 1 2 2a2 2 0 0 1 2-2a2 2 0 0 1-2-2a2 2 0 0 1-2 2zM9 18a6 6 0 0 1 6-6a6 6 0 0 1-6-6a6 6 0 0 1-6 6a6 6 0 0 1 6 6z"></path></svg>';
+var li=st.querySelectorAll('.sl li'),T=[null,['Completion certificate / badges',CERT],['WanderEarn affiliate portal + Unique referral links and codes'],['Commission and payout tracking'],['Travel product catalog'],['AI Powered Content creation guide with Ready-made captions and sales scripts',AI]];
+T.forEach(function(t,i){if(!t||!li[i])return;li[i].lastElementChild.textContent=t[0];if(t[1])li[i].querySelector('.sl-i').innerHTML=t[1]});
+var h=Q('.tl-h',st);if(h){var e=document.createElement('div');e.className='em';var W=['Share','Track','Book','Earn'],f='';W.forEach(function(w,i){if(i)f+='<span class="fa" style="--n:'+(2*i-1)+'" aria-hidden="true">\u2192</span>';f+='<span class="fs" style="--n:'+(2*i)+'">'+w+'</span>'});
+e.innerHTML='<h3 class="em-h">Earning mechanics</h3><div class="flow" aria-label="Share, then Track, then Book, then Earn">'+f+'</div>';h.replaceWith(e)}
+var en=document.getElementById('enroll');if(en){en.classList.add('sale');[].slice.call(en.children).forEach(function(c){if(!c.matches('a.btn,small'))c.remove()});
+var b=Q('a.btn',en);if(b)b.textContent='ENROLL NOW!';
+en.insertAdjacentHTML('afterbegin','<span class="sale-rib" aria-hidden="true"><span class="sale-tag">SALE</span></span><span class="sale-k">YOUR ENROLLMENT \u00b7 WANDERLEARN MEMBERSHIP</span><div class="sale-row"><span class="was" aria-label="was \u20b114,500">\u20b114,500</span><span class="now">\u20b11,500</span></div>')}
+var S=['Choose an eligible product from the portal.','Share a unique affiliate link or referral code.','Customer requests a quote or completes an assisted or online booking.','Booking team confirms the transaction and qualifying attribution.','Commission is recorded and paid under program conditions.'];
+st.querySelectorAll('.tl-stop').forEach(function(s,i){var h3=Q('h3',s),p=s.querySelector('h3 ~ p');if(h3&&S[i])h3.textContent=S[i];if(p)p.remove()});
+var pr=[].find.call(document.querySelectorAll('section.sunset'),function(s){return /THE PROMISE/.test(s.textContent)});
+if(pr){var w=Q('.wrap',pr);w.classList.add('promise');w.innerHTML='<p class="kicker">WANDEREARN \u2022 TRAVEL AFFILIATE MEMBERSHIP</p><p class="quote">LOVE TRAVEL?<br>TURN YOUR PASSION INTO EARNING OPPORTUNITIES.</p><p class="lede">You already share destinations and inspire friends to travel. With WanderEarn, learn to promote ready-to-book experiences and earn commissions when eligible referrals lead to confirmed bookings.</p><a class="btn" href="https://travelpreneurph.com/wanderlearn-payment" target="_blank" rel="noopener noreferrer">JOIN FOR \u20b11,500</a><small class="promise-note">One-time WanderLearn membership + affiliate activation. No guaranteed earnings.</small>'}
+var fq=Q('.faq');if(fq){var fs=fq.closest('section'),kk=Q('.kicker',fs);if(kk)kk.remove();Q('h2',fs).textContent='Frequently asked questions';
+var F=[['Do I need to own a travel agency?','No. WanderEarn affiliates refer customers while the designated booking team processes and fulfills reservations.'],['Is WanderEarn free?','Core affiliate portal access requires the one-time \u20b11,500 WanderLearn membership. Introductory content may be available for free.'],['Can I promote all travel products?','You can promote products marked eligible in the affiliate catalog. Higher performance tiers may earn different commission rates.'],['How and when do I earn?','Commission is based on qualifying confirmed bookings under the published affiliate terms. Posting links alone does not generate guaranteed earnings.'],['Can I personally book or mark up packages?','No. Affiliate access provides referral and promotional tools, not independent booking or arbitrary price-markup privileges.'],['Are other programs included?','Core lessons and tools are included. Optional premium courses and WanderCreate experiences are priced separately.']];
+fq.innerHTML=F.map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join('')}
+},300);</script></body></html>
