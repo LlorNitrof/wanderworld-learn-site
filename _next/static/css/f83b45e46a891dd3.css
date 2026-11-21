@@ -51,3 +51,14 @@ main>section:nth-last-of-type(-n+2){display:none!important}
 .xbtn:hover .xc{animation-duration:.9s}
 .xbtn.on .xc{transform:scaleY(-1)}
 @keyframes xwob{0%,100%{background-position:50% 25%}50%{background-position:50% 75%}}
+.card .cback{display:none}
+@media(max-width:1099px){
+.five .card .xbtn{justify-self:end}
+.five .card .xbtn .xc{transform:rotate(-90deg)}
+.five .card .xbtn.on .xc{transform:rotate(90deg)}
+.five .card.xturn{transform:perspective(900px) rotateY(90deg)}
+.five .card.xback>*:not(.cback):not(.xbtn){display:none!important}
+.five .card.xback .cback{display:block}
+.card .cback.cpanel{margin:0;padding:0;border:0;background:none;max-width:none;box-shadow:none;animation:none}
+}
+@media(max-width:1099px){.five .card.xback{display:block}.five .card.xback .xbtn{display:block;margin:14px 0 0 auto}}

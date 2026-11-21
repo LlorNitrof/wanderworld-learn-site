@@ -33,15 +33,22 @@ if(cards.length!=5||!document.querySelectorAll('.card .instr').length||document.
 var grid=cards[0].parentNode,panel=el('div','cpanel');panel.id='cpanel';panel.hidden=true;grid.parentNode.insertBefore(panel,grid.nextSibling);var cur=-1,btns=[];
 function label(b,open){if(!b.firstChild){b.appendChild(el('span','xl'));b.appendChild(el('span','xc','+'))}b.firstChild.textContent=open?'Close':'Explore';b.setAttribute('aria-label',open?'Close course details':'Explore course details');b.classList.toggle('on',!!open)}
 function ripple(b,ev){var r=b.getBoundingClientRect(),s=el('span','rip'),d=Math.max(r.width,r.height)*2;s.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(ev.clientX-r.left-d/2)+'px;top:'+(ev.clientY-r.top-d/2)+'px';b.appendChild(s);setTimeout(function(){s.remove()},700)}
-function show(i){var c=D[i],ti=cards[i].querySelector('h3').textContent,ins=cards[i].querySelector('.instr strong').textContent;panel.textContent='';panel.classList.remove('out');
-panel.appendChild(el('p','cp-k','COURSE 0'+(i+1)));panel.appendChild(el('h3','cp-t',ti));panel.appendChild(el('p','cp-s',c[0]));
-var I=el('p','cp-i','Instructor: ');I.appendChild(el('strong',null,ins));panel.appendChild(I);
-var w=el('div','cp-w');w.appendChild(el('b',null,'Who is this for?'));w.appendChild(el('span',null,c[1]));panel.appendChild(w);
-panel.appendChild(el('h4','cp-h',"What you'll learn:"));var ol=el('ol');c[2].forEach(function(x){ol.appendChild(el('li',null,x))});panel.appendChild(ol);
-panel.appendChild(el('h4','cp-h','\uD83C\uDF93 Your final learning outcome'));panel.appendChild(el('p','cp-o',c[3]));[].forEach.call(panel.children,function(x,k){x.style.setProperty('--d',k)});[].forEach.call(ol.children,function(x,k){x.style.setProperty('--d',7+k)});panel.hidden=false;panel.style.animation='none';void panel.offsetHeight;panel.style.animation=''}
+function fill(i,box){var c=D[i],ti=cards[i].querySelector('h3').textContent,ins=cards[i].querySelector('.instr strong').textContent;box.textContent='';
+box.appendChild(el('p','cp-k','COURSE 0'+(i+1)));box.appendChild(el('h3','cp-t',ti));box.appendChild(el('p','cp-s',c[0]));
+var I=el('p','cp-i','Instructor: ');I.appendChild(el('strong',null,ins));box.appendChild(I);
+var w=el('div','cp-w');w.appendChild(el('b',null,'Who is this for?'));w.appendChild(el('span',null,c[1]));box.appendChild(w);
+box.appendChild(el('h4','cp-h',"What you'll learn:"));var ol=el('ol');c[2].forEach(function(x){ol.appendChild(el('li',null,x))});box.appendChild(ol);
+box.appendChild(el('h4','cp-h','🎓 Your final learning outcome'));box.appendChild(el('p','cp-o',c[3]));[].forEach.call(box.children,function(x,k){x.style.setProperty('--d',k)});[].forEach.call(ol.children,function(x,k){x.style.setProperty('--d',7+k)})}
+function show(i){panel.classList.remove('out');fill(i,panel);panel.hidden=false;panel.style.animation='none';void panel.offsetHeight;panel.style.animation=''}
+var mq=matchMedia('(max-width:1099px)');
+/* phones/tablets: flip the card in place instead of opening the panel below all cards */
+function flip(card,i,b){var back=card.querySelector('.cback');if(!back){back=el('div','cpanel cback');fill(i,back);card.insertBefore(back,b)}
+var on=!card.classList.contains('xback');card.classList.add('xturn');
+setTimeout(function(){card.classList.toggle('xback',on);b.classList.toggle('on',on);b.setAttribute('aria-label',on?'Back to course summary':'Explore course details');card.classList.remove('xturn');
+setTimeout(function(){window.dispatchEvent(new Event('resize'));var r=card.getBoundingClientRect();if(r.top<0)card.scrollIntoView({behavior:'smooth',block:'start'})},320)},280)}
 function grow(){var h=panel.offsetHeight;panel.style.cssText='overflow:hidden;height:0;padding-top:0;padding-bottom:0;opacity:0';void panel.offsetHeight;panel.style.cssText='overflow:hidden;transition:height 1.1s cubic-bezier(.22,.8,.2,1),padding 1.1s cubic-bezier(.22,.8,.2,1),opacity .9s;height:'+h+'px;opacity:1';setTimeout(function(){if(cur>=0)panel.style.cssText=''},1150)}
 function shrink(){var h=panel.offsetHeight;panel.style.cssText='overflow:hidden;height:'+h+'px';void panel.offsetHeight;panel.style.cssText='overflow:hidden;transition:height .8s ease,padding .8s ease,opacity .6s;height:0;padding-top:0;padding-bottom:0;opacity:0';setTimeout(function(){if(cur<0){panel.hidden=true;panel.style.cssText=''}},850)}
 cards.forEach(function(card,i){var b=el('button','xbtn');b.type='button';label(b);btns.push(b);card.appendChild(b);
-b.addEventListener('click',function(){var open=cur!==i;btns.forEach(function(x,j){label(x,open&&j===i);cards[j].classList.toggle('xopen',open&&j===i)});
+b.addEventListener('click',function(){if(mq.matches){flip(card,i,b);return}var open=cur!==i;btns.forEach(function(x,j){label(x,open&&j===i);cards[j].classList.toggle('xopen',open&&j===i)});
 if(open){var was=cur>=0;cur=i;show(i);if(!was)grow();setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'})},400)}else{cur=-1;shrink()}})})},300)})();</script>
 </body></html>
