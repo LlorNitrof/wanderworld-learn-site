@@ -120,3 +120,5 @@ h2.poss{font-size:clamp(1.6rem,3.7vw,3rem)}h2.poss .hl{white-space:nowrap}h2.pos
 @media(prefers-reduced-motion:reduce){.hero h1.h-ex .xp-w{animation:none}.hero h1.h-ex .xp-u path{animation:none;stroke-dashoffset:0}}
 .hero h1.h-ex .xp-w{text-shadow:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}.hero .hero-pill{margin-top:16px}
 .hero h1.h-ex .xp-u{stroke-width:6.5;height:.42em;bottom:-.26em}
+
+.hero .lede.lede-3{max-width:none}@media(max-width:820px){.hero .lede.lede-3 .dbr{display:none}}

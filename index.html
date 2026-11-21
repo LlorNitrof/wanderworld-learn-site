@@ -54,7 +54,7 @@ if(open){var was=cur>=0;cur=i;show(i);if(!was)grow();setTimeout(function(){panel
 <script>/* Hero copy: WanderEarn kicker, headline, pill and lede (post-hydration so React doesn't revert it). */
 setInterval(function(){var h=document.querySelector('.hero h1');if(!h||h.dataset.we)return;h.dataset.we=1;
 var k=document.querySelector('.hero .kicker');if(k)k.textContent='WANDEREARN';
-var p=document.querySelector('.hero .lede');if(p)p.textContent='Travel opens your mind to new experiences and perspectives. What if you could inspire others to step outside their everyday routines while earning extra income to help fund your next adventure?';
+var p=document.querySelector('.hero .lede');if(p){p.classList.add('lede-3');p.innerHTML='Travel opens your mind to new experiences and perspectives.<br class="dbr"> What if you could inspire others to step outside their everyday routines<br class="dbr"> while earning extra income to help fund your next adventure?'}
 h.classList.add('h-ex');h.innerHTML='Passion mo bang<br><span class="xp"><span class="xp-w">i-explore</span><svg class="xp-u" viewBox="0 0 200 26" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 50 3, 130 2, 196 9"/><path d="M28 21 C 80 14, 140 14, 182 19"/></svg></span> ang mundo?';
 var pl=document.createElement('p');pl.className='hero-pill';pl.textContent='Share Trips. Inspire Others. Earn from Qualifying Bookings.';h.after(pl)},300);</script><script>/* WanderEarn revisions: value stack, sale banner, earning mechanics, stops, promise, FAQ (post-hydration). */
 setInterval(function(){var st=document.getElementById('stack');if(!st||st.dataset.we2)return;st.dataset.we2=1;
